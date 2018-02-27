@@ -1,0 +1,63 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style>
+  body {
+    color: #22a994;
+    background-repeat: no-repeat;
+    font-family: segoe ui, 'sans-serif';
+  }
+
+  #demo {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    font-size: 2.5em;
+    padding-top: 400px;
+    text-align: center;
+  }
+
+  #demo:before {
+    content: "Count Down to Mulaqaat ";
+    font-size: 0.4em;
+    display: block;
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=0.1">
+</head><body><img src="./spaceuptech.com_files/maxresdefault.jpg" style="width: 100%" alt="">
+
+<h1 id="demo">00:00:00</h1>
+
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Mar 01, 2018 10:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+
+
+
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = hours + days * 24 + "h "
+      + minutes + "m " + seconds + "s ";
+
+    // If the count down is over, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "00:00:00";
+    }
+  }, 1000);
+</script></body></html>
